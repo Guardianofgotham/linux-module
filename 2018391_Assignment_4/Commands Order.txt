@@ -1,0 +1,25 @@
+///Make sure doing it everything as root
+
+//For Creation of file & removal also
+make
+cd Encrypter
+make
+insmod Encrypter.ko
+make clean
+cd ../Decrypter
+make
+insmod Decrypter.ko
+make clean
+cd ..
+
+//Steps to test
+dmesg
+mknod /dev/encdev c #majorNumber 1
+mknod /dev/decdev c #majorNumber 1
+./testFile
+
+//Removing kernel module
+rm /dev/encdev
+rm /dev/decdev
+rmmod Encrypter
+rmmod Decrypter
