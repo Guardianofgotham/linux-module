@@ -1,5 +1,4 @@
 # linux-module
-**Assignment 4 (Bonus)**
 
 - --Device encryption file and code scripts are all in the same directory
 - --First created encdev.c file, created a file\_operation Structure &amp; overridden/changed the reference of the following function pointers read, write, open, release. read function write function writes the data to writer global buffer generates a random bytes key of 16 bits and uses xor encryption to encrypt the data provided by the user, &amp; store it to global variable, when user try to read the data give him that data along with the first 16bits as key
